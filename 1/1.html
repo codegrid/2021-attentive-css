@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>デモ</title>
+  <style>
+    /* 灰色背景の親要素 */
+    ul {
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 10px;
+      padding: 20px;
+      list-style: none;
+      background-color: #DEDEDE;
+      border-radius: 20px;
+    }
+    /* アイコンとテキストを横並びにする */
+    a {
+      display: flex;
+      gap: 4px;
+      text-decoration: none;
+      color: #0066FF;
+    }
+    /* > アイコン */
+    a > span:nth-child(1) {
+      flex: none;
+    }
+    /* リンクテキスト */
+    a > span:nth-child(2) {
+      flex: 0 1 auto;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    /* リンクテキストにだけ下線をつける */
+    a:hover > span:nth-child(2) {
+      text-decoration: underline; 
+    }
+  </style>
+</head>
+<body>
+
+  <h1>デモ</h1>
+
+  <!-- 幅が狭い時 -->
+  <ul style="width: 300px;">
+    <li>
+      <a href="#">
+        <span aria-hidden="true">&gt;</span>
+        <span>テキストが入ります。</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span aria-hidden="true">&gt;</span>
+        <span>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span>
+      </a>
+    </li>
+    <!-- 以降省略 -->
+  </ul>
+
+  <!-- 幅が広い時 -->
+  <ul style="width: 100%;">
+    <li>
+      <a href="#">
+        <span aria-hidden="true">&gt;</span>
+        <span>テキストが入ります。</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span aria-hidden="true">&gt;</span>
+        <span>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span>
+      </a>
+    </li>
+    <!-- 以降省略 -->
+  </ul>
+
+</body>
+</html>
